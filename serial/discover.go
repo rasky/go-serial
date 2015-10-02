@@ -10,13 +10,16 @@ const (
 	PortTypeUsb
 	PortTypeBluetooth
 	PortTypePci
+	PortTypeIntegrated
 )
 
 type DiscoverInfo struct {
 	// Name of the serial port, e.g. "/dev/tty.usbserial-A8008HlV".
 	PortName string
 
-	// A human-readable description of the port
+	// A human-readable description of the port. Empty if the
+	// discover process wasn't able to find a description which
+	// is not more useful than the PortName itself.
 	Description string
 
 	// The type of the port
