@@ -57,6 +57,8 @@ func Discover() ([]DiscoverInfo, error) {
 			info.Type = PortTypeUsb
 		case "pnp":
 			info.Type = PortTypeIntegrated
+		case "pci":
+			// We recognize the subsystem but we don't have anything to do
 		case "platform":
 			// Not a real serial port, just exposed by the driver
 			continue
